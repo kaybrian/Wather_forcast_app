@@ -123,3 +123,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # all the apis i am using here 
 LOCATION_API_KEY=config('location_api_key')
+OPEN_API_KEY=config('open_weather_api')

@@ -1,5 +1,6 @@
 from django.conf import settings
 import requests
+import json
 
 
 # getting the location api key 
@@ -23,8 +24,10 @@ def get_ip_geolocation_data(ip_address):
     '''
     if ip_address != "127.0.0.1":
         response = requests.get(api_url + "&ip_address=" + ip_address)
-        return response
+        geolocation_data = json.loads(response.content)
+        return geolocation_data
     else:
         ip_address = '41.186.18.11'
         response = requests.get(api_url + "&ip_address=" + ip_address)
-        return response.content
+        geolocation_data = json.loads(response.content)
+        return geolocation_data

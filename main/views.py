@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from .userlocation import get_ip_geolocation_data
-import json
-
+from .wather_api import get_weather_date
 
 
 def get_client_ip(request):
@@ -18,7 +17,7 @@ class HomePageView(View):
     def get(self,request):
         ip = get_client_ip(request)
         get_location = get_ip_geolocation_data(ip)
-        geolocation_data = json.loads(get_location)
-        print(geolocation_data)
+        weather = get_weather_date('kigali')
+        print(get_location)
         context ={}
         return render(request, 'index.html', context)
