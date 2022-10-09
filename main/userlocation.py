@@ -6,7 +6,8 @@ import json
 # getting the location api key 
 location_api_key = settings.LOCATION_API_KEY
 
-# api call to the u
+
+# # api call to the u
 api_url = 'https://ipgeolocation.abstractapi.com/v1/?api_key=' + location_api_key
 
 

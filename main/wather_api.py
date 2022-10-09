@@ -7,7 +7,7 @@ from django.conf import settings
 open_weather_secret_key = settings.OPEN_API_KEY
 
 # the open weather url
-open_weather_url = "https://api.openweathermap.org/data/2.5/weather?"
+open_weather_url = "https://api.openweathermap.org/data/2.5/forecast?"
 
 def get_weather_date(city_name="kigali"):        
     city_url = open_weather_url + "q=" + city_name + "&appid=" + open_weather_secret_key
@@ -21,10 +21,6 @@ def get_weather_date(city_name="kigali"):
 
     # Check to see if the City exits
     if res["cod"] != "404":
-        tem_kv = res['main']['temp']
-        pressure = res['main']['pressure']
-        humidity = res['main']['humidity']
-        tem_c = int(tem_kv) - 273.15
         print(res)
     else:
         print("Sorry we cant find your city")
