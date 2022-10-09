@@ -25,9 +25,25 @@ def get_ip_geolocation_data(ip_address):
     if ip_address != "127.0.0.1":
         response = requests.get(api_url + "&ip_address=" + ip_address)
         geolocation_data = json.loads(response.content)
-        return geolocation_data
+        
+        context = { 
+                "flag":geolocation_data['flag']['svg'],
+                "city_name": geolocation_data['city'],
+                "country": geolocation_data['country'],
+                "current_time":geolocation_data['timezone']['current_time'],
+                "country_code":geolocation_data['country_code']
+            }
+        return context
     else:
         ip_address = '41.186.18.11'
         response = requests.get(api_url + "&ip_address=" + ip_address)
         geolocation_data = json.loads(response.content)
-        return geolocation_data
+        
+        context = { 
+                "flag":geolocation_data['flag']['svg'],
+                "city_name": geolocation_data['city'],
+                "country": geolocation_data['country'],
+                "current_time":geolocation_data['timezone']['current_time'],
+                "country_code":geolocation_data['country_code']
+            }
+        return context
