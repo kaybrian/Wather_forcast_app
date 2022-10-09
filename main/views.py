@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
-
+from .userlocation import get_ip_geolocation_data
+import json
 
 
 
@@ -16,7 +17,8 @@ def get_client_ip(request):
 class HomePageView(View):
     def get(self,request):
         ip = get_client_ip(request)
-        get_ip_geolocation_data(ip)
-        print(location_api_key)
+        get_location = get_ip_geolocation_data(ip)
+        geolocation_data = json.loads(get_location)
+        print(geolocation_data)
         context ={}
         return render(request, 'index.html', context)
