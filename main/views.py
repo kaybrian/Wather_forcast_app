@@ -3,6 +3,7 @@ from django.views import View
 
 
 
+
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
@@ -15,7 +16,7 @@ def get_client_ip(request):
 class HomePageView(View):
     def get(self,request):
         ip = get_client_ip(request)
-        response = DbIpCity.get(str(ip), api_key='free')
-        print(response.city)
+        get_ip_geolocation_data(ip)
+        print(location_api_key)
         context ={}
         return render(request, 'index.html', context)
