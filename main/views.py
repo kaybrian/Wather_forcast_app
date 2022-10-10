@@ -18,5 +18,5 @@ class HomePageView(View):
         ip = get_client_ip(request)
         get_location = get_ip_geolocation_data(ip)
         weather = get_weather_date(get_location['city_name'])
-        context ={"get_location":get_location}
+        context ={"get_location":get_location, "weather":weather}
         return render(request, 'index.html', context)
