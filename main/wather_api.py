@@ -35,29 +35,28 @@ def get_weather_date(city_name="kigali"):
     if res["cod"] != "404":
         results = {
             "current_day":{
-                "current_tmp": int(res["list"][0]['main']['temp']),
+                "current_tmp": int(res["list"][0]['main']['temp']) - 273.15,
                 "description":res["list"][0]['weather'][0]['main'],
                 "wind":res["list"][0]['wind']['speed'],
                 "humidity":res["list"][0]['main']['humidity'],
                 "Cloudiness":res["list"][0]['clouds']['all']
             },
             "day1":{
-                "temp":int(res['list'][1]['main']['temp']) 
+                "temp":int(res['list'][1]['main']['temp']) - 273.15
             },
             "day2":{
-                "temp":int(res['list'][2]['main']['temp']) 
+                "temp":int(res['list'][2]['main']['temp']) - 273.15
             },
             "day3":{
-                "temp":int(res['list'][3]['main']['temp']) 
+                "temp":int(res['list'][3]['main']['temp']) - 273.15
             },
-            "day3":{
-                "temp":int(res['list'][4]['main']['temp']) 
+            "day4":{
+                "temp":int(res['list'][4]['main']['temp']) - 273.15
             }
         }
-        print(results)
         return results
     else:
-        print("Sorry we cant find your city")
+        return {"Message":"sorry we have a problem"}
 
 
 
