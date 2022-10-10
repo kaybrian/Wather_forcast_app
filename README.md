@@ -59,5 +59,5 @@ when you run the server, the application will run on localhost  `port:8000`
 
 `http://127.0.0.1:8000/`
 
-The home page of the application will look like this 
+The home page of the application will look like this. Remember all this information is coming from a users location 
 <img src="./app.png"/>
