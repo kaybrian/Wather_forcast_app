@@ -46,26 +46,44 @@
                     </div>
                 </div>
             </div>
+            <div class="location-container">
+                <button class="location-button"> <i data-feather="map-pin"></i><span>Predictions for the Next
+                        Hours</span></button>
+            </div>
             <div class="week-container">
                 <ul class="week-list">
-                    <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">Tue</span><span
+                    <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name"
+                            id="day1">{{get_location.current_time}}</span><span
                             class="day-temp">{{weather.day1.temp|floatformat:0}}°C</span></li>
-                    <li><i class="day-icon" data-feather="cloud"></i><span class="day-name">Wed</span><span
+                    <li><i class="day-icon" data-feather="cloud"></i><span class="day-name" id="day2"></span><span
                             class="day-temp">{{weather.day2.temp|floatformat:0}}°C</span></li>
-                    <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name">Thu</span><span
+                    <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name" id="day3"></span><span
                             class="day-temp">{{weather.day3.temp|floatformat:0}}°C</span></li>
-                    <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name">Fry</span><span
+                    <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name" id="day4"></span><span
                             class="day-temp">{{weather.day4.temp|floatformat:0}}°C</span></li>
                     <div class="clear"></div>
                 </ul>
             </div>
-            <div class="location-container">
-                <button class="location-button"> <i data-feather="map-pin"></i><span>Change location</span></button>
-            </div>
+
         </div>
     </div>
 
 </body>
+<script>
+    var current = new Date();
+    let next_1 = current.getHours() + 1;
+    document.getElementById('day1').innerText = next_1 + ':00';
+
+    let next_2 = current.getHours() + 2;
+    document.getElementById('day2').innerText = next_2 + ':00';
+
+    let next_3 = current.getHours() + 3;
+    document.getElementById('day3').innerText = next_3 + ':00'
+
+    let next_4 = current.getHours() + 4;
+    document.getElementById('day4').innerText = next_4 + ':00'
+
+</script>
 <script src="{% static 'assets/js/main.js' %}"></script>
 
 </html>

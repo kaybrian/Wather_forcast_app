@@ -24,7 +24,6 @@ def get_weather_date(city_name="kigali"):
     
     '''     
     city_url = open_weather_url + "q=" + city_name + "&cnt=5" + "&appid=" + open_weather_secret_key
-
     # call the api url and get a respone
     response = requests.get(city_url)
 
