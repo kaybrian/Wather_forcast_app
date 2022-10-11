@@ -48,13 +48,13 @@
             </div>
             <div class="week-container">
                 <ul class="week-list">
-                    <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">Tue</span><span
-                            class="day-temp">{{weather.day1.temp|floatformat:0}}°C</span></li>
-                    <li><i class="day-icon" data-feather="cloud"></i><span class="day-name">Wed</span><span
+                    <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name"
+                            id="day1"></span><span class="day-temp">{{weather.day1.temp|floatformat:0}}°C</span></li>
+                    <li><i class="day-icon" data-feather="cloud"></i><span class="day-name" id="day2"></span><span
                             class="day-temp">{{weather.day2.temp|floatformat:0}}°C</span></li>
-                    <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name">Thu</span><span
+                    <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name" id="day3"></span><span
                             class="day-temp">{{weather.day3.temp|floatformat:0}}°C</span></li>
-                    <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name">Fry</span><span
+                    <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name" id="day4"></span><span
                             class="day-temp">{{weather.day4.temp|floatformat:0}}°C</span></li>
                     <div class="clear"></div>
                 </ul>
@@ -66,6 +66,21 @@
     </div>
 
 </body>
+<script>
+    const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+
+
+
+    const d = new Date();
+    let current_day = days[d.getDay()];
+
+    let day1 = days[d.getDay() - 1];
+    document.getElementById("demo").innerHTML = day1;
+
+
+
+</script>
 <script src="{% static 'assets/js/main.js' %}"></script>
 
 </html>
