@@ -24,7 +24,7 @@ In order to run this application,
 
 `git clone https://github.com/kaybrian/Wather_forcast_app.git`
 
-# create a virtual env 
+# create a virtual environment(env)
 To create a virtual env in python 
 
 `python -m venv env`
