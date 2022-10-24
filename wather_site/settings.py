@@ -1,5 +1,5 @@
 from pathlib import Path
-from decouple import config 
+from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,10 +27,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    # local applications 
+
+    # local applications
     'main.apps.MainConfig',
-    # thirdpart applications 
+    # thirdpart applications
 ]
 
 MIDDLEWARE = [
@@ -120,7 +120,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
-# all the apis i am using here 
-LOCATION_API_KEY=config('4528066b9b34e429d7a2ea52a94c6f5')
-OPEN_API_KEY=config('4528066b9b34e429d7a2ea52a94c6f52')
+# all the apis i am using here
+LOCATION_API_KEY = config('LOCATION_API_KEY')
+OPEN_API_KEY = config('open_weather_api')

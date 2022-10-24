@@ -27,6 +27,13 @@
             <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
                 <h1 class="weather-temp">{{weather.current_day.current_tmp|floatformat:1}}°C</h1>
                 <h3 class="weather-desc">{{weather.current_day.description}}</h3>
+                //current Hours
+                <h3 class="weather-desc">Current Hours: {{weather.current_day.current_hours}}</h3>
+                //current Minutes
+                <h3 class="weather-desc">Current Minutes: {{weather.current_day.current_minutes}}</h3>
+                //current Seconds
+                <h3 class="weather-desc">Current Seconds: {{weather.current_day.current_seconds}}</h3>
+
             </div>
         </div>
         <div class="info-side">
@@ -70,20 +77,108 @@
 
 </body>
 <script>
-    var current = new Date();
-    let next_1 = current.getHours() + 1;
-    document.getElementById('day1').innerText = next_1 + ':00';
-
-    let next_2 = current.getHours() + 2;
-    document.getElementById('day2').innerText = next_2 + ':00';
-
-    let next_3 = current.getHours() + 3;
-    document.getElementById('day3').innerText = next_3 + ':00'
-
-    let next_4 = current.getHours() + 4;
-    document.getElementById('day4').innerText = next_4 + ':00'
-
+    //define a function for script to run and put in a list days
+    function days() {
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var d = new Date();
+        var dayName = days[d.getDay()];
+        var day1 = days[d.getDay() + 1];
+        var day2 = days[d.getDay() + 2];
+        var day3 = days[d.getDay() + 3];
+        var day4 = days[d.getDay() + 4];
+        document.getElementById("day1").innerHTML = dayName;
+        document.getElementById("day2").innerHTML = day1;
+        document.getElementById("day3").innerHTML = day2;
+        document.getElementById("day4").innerHTML = day3;
+        document.getElementById("day5").innerHTML = day4;
+    }
+    //call the function
+    days();
 </script>
+
+// function runScript() {
+//get the current date
+var date = new Date();
+//get the current hours
+var hours = date.getHours();
+//get the current minutes
+var minutes = date.getMinutes();
+//get the current seconds
+var seconds = date.getSeconds();
+//get the current day
+var day = date.getDay();
+//get the current month
+var month = date.getMonth();
+//get the current year
+var year = date.getFullYear();
+//get the current date
+var date = date.getDate();
+//get the current day name
+var dayName = getDayName(day);
+//get the current month name
+var monthName = getMonthName(month);
+//get the current time
+var time = getTime(hours, minutes, seconds);
+//get the current date
+var date = getDate(date, monthName, year);
+//set the current day name
+document.getElementById("day1").innerHTML = dayName;
+//set the current date
+document.getElementById("day2").innerHTML = date;
+//set the current time
+document.getElementById("day3").innerHTML = time;
+//set the current day name
+document.getElementById("day4").innerHTML = dayName;
+//set the current date
+document.getElementById("day5").innerHTML = date;
+//set the current time
+document.getElementById("day6").innerHTML = time;
+//set the current day name
+document.getElementById("day7").innerHTML = dayName;
+//set the current date
+document.getElementById("day8").innerHTML = date;
+//set the current time
+document.getElementById("day9").innerHTML = time;
+//set the current day name
+document.getElementById("day10").innerHTML = dayName;
+//set the current date
+document.getElementById("day11").innerHTML = date;
+//set the current time
+document.getElementById("day12").innerHTML = time;
+//set the current day name
+document.getElementById("day13").innerHTML = dayName;
+//set the current date
+document.getElementById("day14").innerHTML = date;
+//set the current time
+document.getElementById("day15").innerHTML = time;
+//set the current day name
+document.getElementById("day16").innerHTML = dayName;
+//set the current date
+document.getElementById("day17").innerHTML = date;
+//set the current time
+document.getElementById("day18").innerHTML = time;
+//set the current day name
+document.getElementById("day19").innerHTML = dayName;
+//set the current date
+document.getElementById("day20").innerHTML = date;
+//set the current time
+document.getElementById("day21").innerHTML = time;
+//set the current day name
+document.getElementById("day22").innerHTML = dayName;
+//set the current date
+document.getElementById("day23").innerHTML = date;
+//set the current time
+document.getElementById("day24").innerHTML = time;
+//set the current day name
+document.getElementById("day25").innerHTML = dayName;
+//set the current date
+document.getElementById("day26").innerHTML = date;
+//set the current time
+document.getElementById("day27").innerHTML = time;
+//set the current day name
+
+}
+//
 <script src="{% static 'assets/js/main.js' %}"></script>
 
 </html>
