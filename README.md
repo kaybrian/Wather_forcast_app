@@ -40,8 +40,6 @@ To create a virtual env in python
 # add the .env file with the api keys 
 the file should only have two api keys 
 
-`location_api_key = eXXXXXXXXXXXXXXXXX`
-
 `open_weather_api = fbXXXXXXXXXXXXXXXX`
 
 like i said , you can get those api keys from Open weather website and IP websites 
