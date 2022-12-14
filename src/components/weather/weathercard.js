@@ -1,14 +1,8 @@
 import React from "react";
-import { OPEN_WEATHER_URL } from '../../api';
 
 
 
 const WeatherCard = ({loc}) => {
-    const [weather, setWeather] = React.useState(null);
-
-    React.useEffect(() => {
-        
-    })
 
 
     return (
