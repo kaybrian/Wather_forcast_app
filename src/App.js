@@ -4,7 +4,8 @@ import WeatherCard from './components/weather/weathercard'
 
 function App() {
   const [personLocation, setPersonLocation] = React.useState(null)
-  
+  const [weather, setWeather] = React.useState(null)
+
   useEffect(() => {
     fetch('https://ipapi.co/json/')
       .then((response) => response.json())
