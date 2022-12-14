@@ -1,8 +1,11 @@
 import React from "react";
+import { OPEN_WEATHER_URL } from '../../api';
 
 
 
-const WeatherCard = () => {
+const WeatherCard = ({loc}) => {
+
+    console.log(loc)
     return (
         <div class="container">
             <div class="weather-side">
