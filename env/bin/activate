@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/student/Wather_forcast_app/env"
+VIRTUAL_ENV="/home/brian/Desktop/projects/Django_projects/Wather_forcast_app/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
