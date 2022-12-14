@@ -73,6 +73,10 @@ body {
     border-radius: 25px;
     opacity: 0.8;
 }
+.weather_icon{
+    width: 50px;
+    color: white;
+}
 
 .date-container {
     position: absolute;

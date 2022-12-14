@@ -12,7 +12,8 @@ function App() {
 
     Promise.all([CurrentLocation])
     .then(async(response) => {
-      setPersonLocation(response[0].json())
+      const locationResonse = await response[0].json();
+      setPersonLocation({...locationResonse})
     })
     .catch((err) => console.log(err))
 
